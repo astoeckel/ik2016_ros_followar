@@ -12,7 +12,7 @@ import math
 
 def computeSpeed(dist):
     v_max = 1.0  # m/s
-    dist_min = 0.1  # m
+    dist_min = 0.20  # m
     dist_max = 2.0  # m
     if dist < dist_min:
         return 0.0
@@ -37,8 +37,8 @@ class FollowarController:
         # Turn the robot such that the angle gets closer to zero
         t = Twist()
         t.linear.x = computeSpeed(pos[2])
-        t.angular.z = -np.sign(marker_angle) * max(
-            abs(marker_angle) * 10, math.pi)
+        t.angular.z = -np.sign(marker_angle) * min(
+            abs(marker_angle) * 2, math.pi)
 
         self.pub.publish(t)
 
