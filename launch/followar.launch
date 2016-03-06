@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="ar_pose" pkg="ar_pose" type="ar_single" respawn="false"
+    output="screen">
+    <param name="marker_pattern" type="string"
+      value="$(find ar_pose)/data/4x4/4x4_9.patt"/>
+    <param name="marker_width" type="double" value="152.4"/>
+    <param name="threshold" type="int" value="50"/>
+  </node>
+</launch>
