@@ -5,6 +5,7 @@
     <param name="marker_pattern" type="string"
       value="$(find ar_pose)/data/4x4/4x4_9.patt"/>
     <param name="marker_width" type="double" value="114"/>
-    <param name="threshold" type="int" value="50"/>
+    <param name="threshold" type="int" value="10"/>
   </node>
+  <node name="followar" pkg="followar" type="followar.py"/>
 </launch>
